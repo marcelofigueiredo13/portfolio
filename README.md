@@ -6,6 +6,6 @@ Neste repositório estão presentes alguns projetos de ambiente académico que r
 
 2º Projeto - Sistema embebido para controlo de uma piscina
 
-3º Projeto - Carregar ficheiro .obj e efetuar operações sobre estes
+3º Projeto - Carregar ficheiros .obj e efetuar operações sobre estes
 
 4º Projeto - Loja virtual de livros
