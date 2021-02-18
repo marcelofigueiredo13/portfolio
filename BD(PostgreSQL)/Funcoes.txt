@@ -1,0 +1,194 @@
+------------------------------------------------------------------------------------
+--Funcao que devolve o total de golos de uma determinada equipa num determinado ano
+------------------------------------------------------------------------------------
+--select total_golos_ano('Juventus', 2020)
+
+CREATE OR REPLACE FUNCTION total_golos_ano(equipa varchar, ano integer)RETURNS int AS
+$BODY$
+DECLARE
+total_golos integer;
+idequipa integer;
+
+BEGIN
+
+--Devolve o id da equipa
+idequipa = devolve_idequipa(equipa);
+
+--Golos de uma determinada equipa num determinado ano
+select sum(count(*)) over ()
+FROM pontuacao
+join jogador on jogador.j_idjogador = pontuacao.j_idjogador
+join tem on tem.j_idjogador = jogador.j_idjogador
+join jogo on jogo.jo_idjogo = pontuacao.jo_idjogo
+where eq_idequipa = idequipa and DATE_PART('year', jo_data) = ano into total_golos;
+
+IF(total_golos != 0) THEN
+	RETURN total_golos;
+ELSE
+	RAISE EXCEPTION 'A EQUIPA NÃO MARCOU GOLOS EM %', ano;
+END IF;
+
+END;
+$BODY$
+LANGUAGE plpgsql;
+
+
+------------------------------------------------------------------------------------
+--Funcao que devolve o total de golos de um determinado jogador num determinado ano
+------------------------------------------------------------------------------------
+--select total_golos_jogador('Cristiano Ronaldo', 2018)
+
+CREATE OR REPLACE FUNCTION total_golos_jogador(nome_jogador varchar, ano integer)RETURNS int AS
+$BODY$
+DECLARE total_golos integer;
+DECLARE idjogador integer;
+
+BEGIN
+
+--Golos de um determinado jogador num determinado ano
+SELECT sum(po_quantidade) FROM pontuacao
+JOIN jogador ON jogador.j_idjogador = pontuacao.j_idjogador
+JOIN jogo ON jogo.jo_idjogo = pontuacao.jo_idjogo
+WHERE jogador.j_nome LIKE nome_jogador AND DATE_PART('year', jo_data) = ano INTO total_golos;
+
+IF(total_golos != 0) THEN
+	RETURN total_golos;
+ELSE
+	RAISE EXCEPTION 'O JOGADOR NÃO MARCOU GOLOS';
+END IF;
+
+END;
+$BODY$
+LANGUAGE plpgsql;
+
+
+-----------------------------------------------------------------------------------------
+--Funcao que devolve o top 5 dos numeros mais utilizados pelos jogadores em todas as ligas
+-----------------------------------------------------------------------------------------
+--select * from top5numeros()
+
+CREATE OR REPLACE FUNCTION public.top5numeros()
+    RETURNS TABLE(numero integer, total bigint) 
+    LANGUAGE 'plpgsql'   
+AS $BODY$
+DECLARE
+
+BEGIN
+	return query select j_numerocamisola, count(*)
+	from jogador
+	group by j_numerocamisola order by count(*) desc limit 5;
+END;
+$BODY$;
+
+
+-----------------------------------------------------------------------------------------
+--Devolve o preco por golo de um jogador na sua equipa atual
+-----------------------------------------------------------------------------------------
+--select preco_golo('Cristiano Ronaldo')
+
+CREATE OR REPLACE FUNCTION public.preco_golo(nome_jogador varchar)
+RETURNS text
+LANGUAGE 'plpgsql'
+AS $BODY$
+DECLARE
+idjogador integer;
+golos_equipa integer;
+valor_mercado integer;
+preco_golo integer;
+BEGIN
+	idjogador = (select devolve_idjogador(nome_jogador));
+	golos_equipa = (SELECT sum(po_quantidade)  
+					from pontuacao
+					join jogador on jogador.j_idjogador = pontuacao.j_idjogador
+					join tem on tem.j_idjogador = jogador.j_idjogador
+					join equipa on equipa.eq_idequipa = tem.eq_idequipa
+					where pontuacao.j_idjogador = idjogador);
+	valor_mercado = (SELECT j_valormercado from jogador where j_idjogador = idjogador);
+	preco_golo = (valor_mercado/golos_equipa);
+	return CONCAT((to_char(preco_golo, 'FM999,999,999,999,999,999')),'€');
+END;
+$BODY$;
+
+
+-----------------------------------------------------------------------------------------
+--Imprime o resultado de um jogo de ténis
+-----------------------------------------------------------------------------------------
+--select jogo_tenis(11059)
+
+CREATE OR REPLACE FUNCTION jogo_tenis(idjogo integer)
+RETURNS void
+AS
+$$
+DECLARE
+npartes integer;
+
+i integer;
+
+casa integer;
+fora integer;
+
+equipa1 varchar;
+equipa2 varchar;
+
+vitoria_casa integer;
+vitoria_fora integer;
+
+setcasa integer;
+setfora integer;
+
+BEGIN
+	npartes = (SELECT DISTINCT COUNT(*) FROM pontuacao where jo_idjogo = idjogo) / 2;
+	
+	i = 0;
+	vitoria_casa = 0;
+	vitoria_fora = 0;
+	setfora = 0;
+	setcasa = 0;
+	LOOP
+	IF (i > npartes) THEN EXIT; END IF;
+	
+		  casa = (SELECT SUM(p_resultadoequipacasa)
+		  from parte 
+		  inner join pontuacao on parte.p_idparte=pontuacao.p_idparte 
+		  where pontuacao.jo_idjogo = idjogo and p_nparte = i);
+		  --raise notice '%', casa;
+		  
+		  fora = (SELECT SUM(p_resultadoequipafora)
+		  from parte 
+		  inner join pontuacao on parte.p_idparte=pontuacao.p_idparte 
+		  where pontuacao.jo_idjogo = idjogo and p_nparte = i);
+		  --raise notice '%', fora;
+		  
+		  if(casa > fora) then vitoria_casa = vitoria_casa + 1; end if;
+		  
+		  if (fora > casa) then vitoria_fora = vitoria_fora + 1; end if;
+		  
+	i = i + 1;
+	END LOOP;
+	equipa1 = (SELECT eq_nome from equipa join jogador_jogo_equipa on jogador_jogo_equipa.eq_idequipa = equipa.eq_idequipa where jo_idjogo = idjogo order by jje_id desc limit 1);
+    equipa2 = (SELECT eq_nome from equipa join jogador_jogo_equipa on jogador_jogo_equipa.eq_idequipa = equipa.eq_idequipa where jo_idjogo = idjogo order by jje_id asc limit 1);
+	 
+	if(vitoria_casa > vitoria_fora) then setcasa = setcasa + 1; else setfora = setfora + 1; end if;
+	
+	raise notice '% - %:% - %', equipa1, vitoria_casa, vitoria_fora, equipa2;
+	raise notice 'Resultado do jogo % - %', setcasa, setfora;
+END;
+$$
+Language plpgsql;
+
+
+--Consulta auxiliar que devolve os jogos de tenis da base de dados
+/*
+SELECT eq_nome, jogo.jo_idjogo, jje_tipo
+from jogo
+join jogador_jogo_equipa on jogador_jogo_equipa.jo_idjogo=jogo.jo_idjogo
+join equipa on equipa.eq_idequipa = jogador_jogo_equipa.eq_idequipa
+full join pontuacao on pontuacao.jo_idjogo = jogo.jo_idjogo
+full join parte on parte.p_idparte = pontuacao.p_idparte
+join composto on composto.eq_idequipa = equipa.eq_idequipa
+join campeonato on campeonato.c_idcampeonato = composto.c_idcampeonato
+join realizado on realizado.c_idcampeonato = campeonato.c_idcampeonato
+join epoca on epoca.e_idepoca = realizado.e_idepoca
+where c_nome LIKE 'ATP Finals - Londres'
+group by eq_nome, jogo.jo_idjogo,jje_tipo order by jogo.jo_idjogo
+*/

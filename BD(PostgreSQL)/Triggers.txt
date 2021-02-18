@@ -1,0 +1,199 @@
+------------------------------------------------------------------------------------
+--Criar a tabela do historico
+------------------------------------------------------------------------------------
+CREATE TABLE public.historico
+(
+    id_acao SERIAL,
+    table_name text COLLATE pg_catalog."default" NOT NULL,
+    utilizador text COLLATE pg_catalog."default" NOT NULL,
+    timestamp_acao timestamp without time zone NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    acao text COLLATE pg_catalog."default" NOT NULL,
+    old_values json,
+    new_values json,
+    query text COLLATE pg_catalog."default",
+    CONSTRAINT historico_pkey PRIMARY KEY (id_acao)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE public.historico
+    OWNER to postgres;
+
+
+------------------------------------------------------------------------------------
+--Trigger que regista as operações efetuadas na base de dados
+------------------------------------------------------------------------------------
+CREATE OR REPLACE FUNCTION registo_alteracoes() RETURNS TRIGGER AS $BODY$
+begin
+    if tg_op = 'UPDATE' THEN
+        INSERT INTO historico (table_name, utilizador, acao, old_values, new_values, query)
+        VALUES (tg_table_name::text, current_user::text, 'update', row_to_json(OLD), row_to_json(NEW), current_query());
+        RETURN NEW;
+    ELSIF tg_op = 'DELETE' THEN
+        INSERT INTO historico (table_name, utilizador, acao, old_values, query)
+        VALUES (tg_table_name::text, current_user::text, 'delete', row_to_json(OLD), current_query());
+        RETURN OLD;
+    ELSIF tg_op = 'INSERT' THEN
+        INSERT INTO historico (table_name, utilizador, acao, old_values, new_values, query)
+        VALUES (tg_table_name::text, current_user::text, 'insert', row_to_json(OLD), row_to_json(NEW), current_query());
+        RETURN NEW;
+    END IF;
+END;
+$BODY$
+LANGUAGE plpgsql;
+
+
+------------------------------------------------------------------------------------
+--Aplicar o trigger à tabela das ações disciplinares
+------------------------------------------------------------------------------------
+create trigger trigger_acaodisciplinar after insert or update or delete on acaodisciplinar for each row execute procedure registo_alteracoes();
+
+
+------------------------------------------------------------------------------------
+--Aplicar o trigger à tabela dos campeonatos
+------------------------------------------------------------------------------------
+create trigger trigger_campeonato after insert or update or delete on campeonato for each row execute procedure registo_alteracoes();
+
+
+------------------------------------------------------------------------------------
+--Aplicar o trigger à tabela composto
+------------------------------------------------------------------------------------
+create trigger trigger_composto after insert or update or delete on composto for each row execute procedure registo_alteracoes();
+
+
+------------------------------------------------------------------------------------
+--Aplicar o trigger à tabela dos condicionado
+------------------------------------------------------------------------------------
+create trigger trigger_condicionado after insert or update or delete on condicionado for each row execute procedure registo_alteracoes();
+
+
+------------------------------------------------------------------------------------
+--Aplicar o trigger à tabela das épocas
+------------------------------------------------------------------------------------
+create trigger trigger_epoca after insert or update or delete on epoca for each row execute procedure registo_alteracoes();
+
+
+------------------------------------------------------------------------------------
+--Aplicar o trigger à tabela das equipas
+------------------------------------------------------------------------------------
+create trigger trigger_equipa after insert or update or delete on equipa for each row execute procedure registo_alteracoes();
+
+
+------------------------------------------------------------------------------------
+--Aplicar o trigger à tabela dos espaços desportivos
+------------------------------------------------------------------------------------
+create trigger trigger_espacodesportivo after insert or update or delete on espacodesportivo for each row execute procedure registo_alteracoes();
+
+
+------------------------------------------------------------------------------------
+--Aplicar o trigger à tabela do estado dos jogadores
+------------------------------------------------------------------------------------
+create trigger trigger_estadojogador after insert or update or delete on estadojogador for each row execute procedure registo_alteracoes();
+
+
+------------------------------------------------------------------------------------
+--Aplicar o trigger à tabela das faixas etárias
+------------------------------------------------------------------------------------
+create trigger trigger_faixaetaria after insert or update or delete on faixaetaria for each row execute procedure registo_alteracoes();
+
+
+------------------------------------------------------------------------------------
+--Aplicar o trigger à tabela dos jogadores
+------------------------------------------------------------------------------------
+create trigger trigger_jogador after insert or update or delete on jogador for each row execute procedure registo_alteracoes();
+
+
+------------------------------------------------------------------------------------
+--Aplicar o trigger à tabela dos jogadores jogos equipas
+------------------------------------------------------------------------------------
+create trigger trigger_jogadorjogoequipa after insert or update or delete on jogador_jogo_equipa for each row execute procedure registo_alteracoes();
+
+
+------------------------------------------------------------------------------------
+--Aplicar o trigger à tabela dos jogos
+------------------------------------------------------------------------------------
+create trigger trigger_jogo after insert or update or delete on jogo for each row execute procedure registo_alteracoes();
+
+
+------------------------------------------------------------------------------------
+--Aplicar o trigger à tabela das modalidades
+------------------------------------------------------------------------------------
+create trigger trigger_modalidade after insert or update or delete on modalidade for each row execute procedure registo_alteracoes();
+
+
+------------------------------------------------------------------------------------
+--Aplicar o trigger à tabela dos países
+------------------------------------------------------------------------------------
+create trigger trigger_pais after insert or update or delete on pais for each row execute procedure registo_alteracoes();
+
+
+------------------------------------------------------------------------------------
+--Aplicar o trigger à tabela das partes
+------------------------------------------------------------------------------------
+create trigger trigger_parte after insert or update or delete on parte for each row execute procedure registo_alteracoes();
+
+
+------------------------------------------------------------------------------------
+--Aplicar o trigger à tabela da pontuação
+------------------------------------------------------------------------------------
+create trigger trigger_pontuacao after insert or update or delete on pontuacao for each row execute procedure registo_alteracoes();
+
+
+------------------------------------------------------------------------------------
+--Aplicar o trigger à tabela realizado
+------------------------------------------------------------------------------------
+create trigger trigger_realizado after insert or update or delete on realizado for each row execute procedure registo_alteracoes();
+
+
+------------------------------------------------------------------------------------
+--Aplicar o trigger à tabela das substituições
+------------------------------------------------------------------------------------
+create trigger trigger_substituicao after insert or update or delete on substituicao for each row execute procedure registo_alteracoes();
+
+
+------------------------------------------------------------------------------------
+--Aplicar o trigger à tabela tem
+------------------------------------------------------------------------------------
+create trigger trigger_tem after insert or update or delete on tem for each row execute procedure registo_alteracoes();
+
+
+------------------------------------------------------------------------------------
+--Aplicar o trigger à tabela dos treinadores
+------------------------------------------------------------------------------------
+create trigger trigger_treinador after insert or update or delete on treinador for each row execute procedure registo_alteracoes();
+
+
+--------------------------------------------------------------------------------------------------------------
+--Funçao do trigger que vai verificar o estado do jogador antes da sua inserção na tabela jogador_jogo_equipa
+--------------------------------------------------------------------------------------------------------------
+
+CREATE OR REPLACE FUNCTION verifica_disponibilidade()
+RETURNS TRIGGER AS
+$$
+DECLARE estado integer;
+BEGIN
+	estado = (select ej_idestado from condicionado where j_idjogador = NEW.j_idjogador);
+ 	IF(estado = 4) THEN
+		RETURN NEW;
+	ELSE RAISE NOTICE 'Jogador indisponivel';
+	END IF;
+END;
+$$
+Language plpgsql;
+
+
+------------------------------
+--Aplicar o trigger à tabela
+------------------------------
+
+CREATE TRIGGER trigger_estadojogador
+ AFTER INSERT OR UPDATE
+ ON jogador_jogo_equipa
+ FOR EACH ROW
+ EXECUTE PROCEDURE verifica_disponibilidade();
+
+
+
+--UPDATE condicionado SET ej_idestado = 1 where j_idjogador = 1;
+--INSERT INTO public.jogador_jogo_equipa(eq_idequipa, jo_idjogo, j_idjogador, jje_tipo) VALUES (1, 1, 193, 'casa');
+--INSERT INTO public.jogador_jogo_equipa(eq_idequipa, jo_idjogo, j_idjogador, jje_tipo) VALUES (1, 1, 1, 'casa');
