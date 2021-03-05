@@ -11,3 +11,5 @@ Neste repositório estão presentes alguns projetos de ambiente académico que r
 4º Projeto - Carregar ficheiros .obj e efetuar operações sobre estes
 
 5º Projeto - Loja virtual de livros
+
+6º Projeto - Sistema distribuído que utiliza RMI
