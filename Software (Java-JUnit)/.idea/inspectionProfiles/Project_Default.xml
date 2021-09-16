@@ -1,0 +1,57 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="CStyleArrayDeclaration" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="CharsetObjectCanBeUsed" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="DeprecatedGradleDependency" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="DeprecatedMavenDependency" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="GrUnnecessaryAlias" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="GrUnnecessaryDefModifier" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="GrUnnecessaryPublicModifier" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="GrUnnecessarySemicolon" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="KotlinDeprecation" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="KotlinDoubleNegation" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="KotlinRedundantOverride" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="MigrateDiagnosticSuppression" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="MissingOverrideAnnotation" enabled="false" level="INFORMATION" enabled_by_default="false">
+      <option name="ignoreObjectMethods" value="true" />
+      <option name="ignoreAnonymousClassMethods" value="false" />
+    </inspection_tool>
+    <inspection_tool class="NullableBooleanElvis" enabled="false" level="INFO" enabled_by_default="false" />
+    <inspection_tool class="ObsoleteExperimentalCoroutines" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="RedundantGetter" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="RedundantIf" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="RedundantModalityModifier" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="RedundantSemicolon" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="RedundantSetter" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="RedundantUnitReturnType" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="RedundantVisibilityModifier" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="RemoveEmptyClassBody" enabled="false" level="INFO" enabled_by_default="false" />
+    <inspection_tool class="RemoveEmptyParenthesesFromLambdaCall" enabled="false" level="INFO" enabled_by_default="false" />
+    <inspection_tool class="RemoveEmptyPrimaryConstructor" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="RemoveEmptySecondaryConstructorBody" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="RemoveExplicitSuperQualifier" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="RemoveToStringInStringTemplate" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="SimplifiableBooleanExpression" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SimplifiableConditionalExpression" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SimplifiableEqualsExpression" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SortModifiers" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="TrivialIf" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="TypeParameterFindViewById" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="UnnecessarilyQualifiedStaticUsage" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="m_ignoreStaticFieldAccesses" value="false" />
+      <option name="m_ignoreStaticMethodCalls" value="false" />
+      <option name="m_ignoreStaticAccessFromStaticContext" value="false" />
+    </inspection_tool>
+    <inspection_tool class="UnnecessarilyQualifiedStaticallyImportedElement" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryConditionalExpression" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="UnnecessaryFinalOnLocalVariableOrParameter" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryQualifierForThis" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="UnnecessarySuperConstructor" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="UnnecessarySuperQualifier" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryThis" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="UnnecessaryToStringCall" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="UsePropertyAccessSyntax" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="WrongPropertyKeyValueDelimiter" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+  </profile>
+</component>
