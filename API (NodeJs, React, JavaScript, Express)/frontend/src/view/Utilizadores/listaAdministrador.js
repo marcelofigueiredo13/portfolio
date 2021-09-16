@@ -35,7 +35,7 @@ class listComponent extends React.Component {
 
 
 async loadUtilizador(){
-    const url = "https://crowdzeroapieuropeappandsite.herokuapp.com/utilizador/list";
+    const url = "xxx/utilizador/list";
     await axios.get(url).then(res => {        
     if(res.data){
         this.state.loading = false;
@@ -110,7 +110,7 @@ return (
 
 //ainda não funciona porque o utilizador está dependente das outras tabelas
 async sendDelete(id){
-        const baseUrl = "https://crowzeroapieurope.herokuapp.com/utilizador/delete";
+        const baseUrl = "xxx/utilizador/delete";
       await axios.post(baseUrl, {
             u_idutilizador:id
         }).then(response =>{

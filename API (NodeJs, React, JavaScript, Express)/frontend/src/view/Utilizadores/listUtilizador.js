@@ -54,7 +54,7 @@ class listComponent extends React.Component {
  }
     
 async loadMoreData() {
-    const url = "https://crowdzeroapieuropeappandsite.herokuapp.com/utilizador/list";
+    const url = "xxx/utilizador/list";
     await axios.get(url).then(res => {        
     if(res.data){
         this.state.loading = false;
@@ -72,7 +72,7 @@ async loadMoreData() {
 
 
 async loadUtilizador(){
-    const url = "https://crowdzeroapieuropeappandsite.herokuapp.com/utilizador/list";
+    const url = "xxx/utilizador/list";
     await axios.get(url).then(res => {        
     if(res.data){
         this.state.loading = false;
@@ -166,7 +166,7 @@ return (
 }
 
 async sendDelete(id){
-        const baseUrl = "https://crowdzeroapieuropeappandsite.herokuapp.com/utilizador/delete/" + id;
+        const baseUrl = "xxx/utilizador/delete/" + id;
         await axios.post(baseUrl, {
             u_idutilizador:id            
         }).then(response =>{
@@ -225,7 +225,7 @@ onDelete(id){
         }
 
         async sendAtivate(id){
-            const baseUrl = "https://crowdzeroapieuropeappandsite.herokuapp.com/utilizador/ativate/" + id;
+            const baseUrl = "xxx/utilizador/ativate/" + id;
             console.log("Utilizador: " + id);
             await axios.post(baseUrl, {
                 u_idutilizador:id            

@@ -9,7 +9,7 @@ import 'sweetalert2/src/sweetalert2.scss'
 
 import Error from '../Error/error';
 
-const baseUrl = "https://crowdzeroapieuropeappandsite.herokuapp.com";
+const baseUrl = "xxx";
 class EditComponent extends React.Component{
     constructor(props){
     super(props);

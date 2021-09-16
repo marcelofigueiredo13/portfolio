@@ -33,7 +33,7 @@ async componentDidMount(){
 
 
 async loadReport(){
-    const url = "https://crowdzeroapieuropeappandsite.herokuapp.com/report/list";    
+    const url = "xxx/report/list";    
     await axios.get(url).then(res => {
     if(res.data){
         this.state.loading = false
@@ -51,7 +51,7 @@ async loadReport(){
 
 
 async loadMoreData() {
-    const url = "https://crowdzeroapieuropeappandsite.herokuapp.com/report/list";
+    const url = "xxx/report/list";
     await axios.get(url).then(res => {        
     if(res.data){        
         const data = res.data;        

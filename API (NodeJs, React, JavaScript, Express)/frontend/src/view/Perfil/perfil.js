@@ -10,7 +10,7 @@ import 'sweetalert2/src/sweetalert2.scss'
 import Error from '../Error/error';
 
 import './perfil.css';
-const baseUrl = "https://crowdzeroapieuropeappandsite.herokuapp.com";
+const baseUrl = "xxx";
 class Perfil extends React.Component{
     constructor(props){
     super(props);

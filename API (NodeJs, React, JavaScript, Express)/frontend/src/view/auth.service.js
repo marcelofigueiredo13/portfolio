@@ -5,7 +5,7 @@ class AuthService {
   
 async login(u_email, u_password) {
     return await axios
-        .post("https://crowdzeroapieuropeappandsite.herokuapp.com/utilizador/login", {u_email, u_password})
+        .post("xxx/utilizador/login", {u_email, u_password})
         .then(res => {
                 if (res.data.token) {
                 localStorage.setItem("user", JSON.stringify(res.data));

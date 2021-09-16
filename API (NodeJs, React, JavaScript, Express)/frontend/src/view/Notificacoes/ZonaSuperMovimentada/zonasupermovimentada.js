@@ -50,7 +50,7 @@ export default class App extends React.Component{
     
     //Encontrar Local pelas coordenadas
     async local(){
-        const url = "https://crowdzeroapieuropeappandsite.herokuapp.com/local/list";
+        const url = "xxx/local/list";
        await axios.get(url).then(res => {
         if(res.data){
             const data = res.data;
@@ -80,7 +80,7 @@ export default class App extends React.Component{
 
     //Carregar todos os ID's dos Alertas
     async loadAlerta(){
-        const url = "https://crowdzeroapieuropeappandsite.herokuapp.com/alerta/list";
+        const url = "xxx/alerta/list";
         axios.get(url, {headers: authHeader()}).then(res => {
     if(res.data.success){
         const data = res.data.data;
@@ -102,7 +102,7 @@ export default class App extends React.Component{
 
     async NotificarAutoridadesLocais(){
         let alertaId = this.state.campIdAlerta;
-        const baseUrl = "https://crowdzeroapieuropeappandsite.herokuapp.com";
+        const baseUrl = "xxx";
         const url = baseUrl+"/alerta/update/"+ alertaId
         const datapost = {
                 ta_idtipo : 4                
@@ -171,7 +171,7 @@ export default class App extends React.Component{
     <hr></hr>
         <br></br>              
       <div>
-      <WrappedMap googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=AIzaSyDyy_EwhzTJLy1gW91GhRadcttukl6V3OQ`}
+      <WrappedMap googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=token`}
           loadingElement = {<div style={{ height: `100%` }} />}
           containerElement={<div style={{ height: `400px` }} />}
           mapElement={<div style={{ height: `100%` }} />}

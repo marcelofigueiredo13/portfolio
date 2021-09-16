@@ -8,16 +8,11 @@
     "dev": "nodemon src/app.js"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/JoaoCaldas98/Crowd-Zero.git"
+    "type": "git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/JoaoCaldas98/Crowd-Zero/issues"
-  },
-  "homepage": "https://github.com/JoaoCaldas98/Crowd-Zero#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",

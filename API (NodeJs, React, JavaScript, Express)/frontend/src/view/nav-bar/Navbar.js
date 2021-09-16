@@ -8,7 +8,7 @@ import Icon from '../images/icon.png'
 
 const { Component } = require("react")
 
-const baseUrl = "https://crowdzeroapieuropeappandsite.herokuapp.com";
+const baseUrl = "xxx";
 export default class Navbar extends Component{
 
   constructor(props) {
@@ -42,7 +42,7 @@ export default class Navbar extends Component{
 
  //Carregar os Id's dos locais
  async local(){
-  const url = "https://crowdzeroapieuropeappandsite.herokuapp.com/local/list";
+  const url = "xxx/local/list";
  await axios.get(url).then(res => {
   if(res.data){
       const data = res.data;
@@ -80,7 +80,7 @@ export default class Navbar extends Component{
 
  //Carregar todos os alertas
  async loadAlerta(){
-    const url = "https://crowdzeroapieuropeappandsite.herokuapp.com/alerta/list";
+    const url = "xxx/alerta/list";
    await axios.get(url, {headers: authHeader()}).then(res => {
     if(res.data.success){
         const data = res.data.data;

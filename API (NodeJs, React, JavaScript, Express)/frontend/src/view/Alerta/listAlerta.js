@@ -26,7 +26,7 @@ class listComponent extends React.Component {
 
 //Carregar os dados da BD
 async loadAlerta(){
-    const url = "https://crowdzeroapieuropeappandsite.herokuapp.com/alerta/list";
+    const url = "https:xxx/alerta/list";
     await axios.get(url, {headers: authHeader()}).then(res => {
     if(res.data.success){
         const data = res.data.data;
@@ -43,7 +43,7 @@ async loadAlerta(){
 
 //Carregar os reports da BD
 async loadReports(){
-    const url = "https://crowdzeroapieuropeappandsite.herokuapp.com/report/list";
+    const url = "https:xxx/report/list";
     await axios.get(url).then(res => {
         if(res.data){
             const data = res.data;

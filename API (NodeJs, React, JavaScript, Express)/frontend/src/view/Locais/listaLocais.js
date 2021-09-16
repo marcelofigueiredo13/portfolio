@@ -32,7 +32,7 @@ class listComponent extends React.Component {
 
 //Carregar os dados da BD
 async loadLocais(){
-    const url = "https://crowdzeroapieuropeappandsite.herokuapp.com/local/list";
+    const url = "xxx/local/list";
     await axios.get(url).then(res => {
     this.state.loading = false;
     if(res.data){
@@ -50,7 +50,7 @@ async loadLocais(){
 }
 
 async loadMoreData() {
-    const url = "https://crowdzeroapieuropeappandsite.herokuapp.com/local/list";
+    const url = "xxx/local/list";
     await axios.get(url).then(res => {        
     if(res.data){        
         const data = res.data;        
@@ -79,7 +79,7 @@ handlePageClick = (e) => {
 };
 
 async sendDelete(id){
-    const baseUrl = "https://crowdzeroapieuropeappandsite.herokuapp.com/local/disable/" + id;
+    const baseUrl = "xxx/local/disable/" + id;
     await axios.post(baseUrl, {
         u_local:id            
     }).then(response =>{

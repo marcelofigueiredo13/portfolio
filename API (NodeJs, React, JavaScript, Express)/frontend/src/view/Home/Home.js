@@ -30,7 +30,7 @@ async componentDidMount(){
 
 
 async LoadUtilizadores(){    
-    const url = "https://crowdzeroapieuropeappandsite.herokuapp.com/utilizador/list";
+    const url = "xxx/utilizador/list";
     await axios.get(url).then(res => {        
     if(res.data){        
         const data = res.data;
@@ -44,7 +44,7 @@ async LoadUtilizadores(){
 }
 
 async loadAlerta(){
-    const url = "https://crowdzeroapieuropeappandsite.herokuapp.com/alerta/list";
+    const url = "xxx/alerta/list";
     await axios.get(url, {headers: authHeader()}).then(res => {
     if(res.data.success){
         const data = res.data.data;
@@ -59,7 +59,7 @@ async loadAlerta(){
 
 
 async loadLocais(){
-    const url = "https://crowdzeroapieuropeappandsite.herokuapp.com/local/list";
+    const url = "xxx/local/list";
     await axios.get(url).then(res => {        
     this.state.loading = false;    
     if(res.data){
