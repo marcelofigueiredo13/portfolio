@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="240dp"
+    android:layout_height="300dp"
+    android:background="@drawable/layout_report_dialog">
+
+    <ImageButton
+        android:id="@+id/noButton"
+        android:layout_width="105dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="151dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/evaluation_no_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/local"
+        app:srcCompat="@drawable/wrong" />
+
+    <TextView
+        android:id="@+id/body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="79dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="79dp"
+        android:layout_marginBottom="253dp"
+        android:text="Avaliação"
+        android:textAllCaps="true"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="MissingConstraints" />
+
+    <EditText
+        android:id="@+id/local"
+        android:layout_width="230dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginBottom="190dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Escreva o seu comentário"
+        android:textAllCaps="true"
+        android:textColor="#707070"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageButton
+        android:id="@+id/yesButton"
+        android:layout_width="105dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginEnd="150dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/evaluation_yes_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/local"
+        app:srcCompat="@drawable/correct" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

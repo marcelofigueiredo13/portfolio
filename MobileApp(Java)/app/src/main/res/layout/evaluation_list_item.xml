@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="186dp">
+
+    <TextView
+        android:id="@+id/board"
+        android:layout_width="363dp"
+        android:layout_height="152dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="17dp"
+        android:background="@drawable/report_info_white"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="109dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="37dp"
+        android:layout_marginTop="118dp"
+        android:layout_marginEnd="265dp"
+        android:layout_marginBottom="36dp"
+        android:singleLine="false"
+        android:textAllCaps="true"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="44dp"
+        android:layout_height="26dp"
+        android:layout_marginStart="313dp"
+        android:layout_marginTop="124dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginBottom="36dp"
+        android:textAllCaps="true"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/local"
+        android:layout_width="200dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="167dp"
+        android:layout_marginBottom="117dp"
+        android:singleLine="false"
+        android:textAllCaps="true"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/like"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="325dp"
+        android:layout_marginTop="37dp"
+        android:layout_marginEnd="54dp"
+        android:layout_marginBottom="117dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

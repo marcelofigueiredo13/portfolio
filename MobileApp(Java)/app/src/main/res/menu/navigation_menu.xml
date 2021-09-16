@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/profile"
+        android:title="PERFIL"
+        android:icon="@drawable/profile"/>
+
+    <item android:id="@+id/reports"
+        android:title="REPORTS"
+        android:icon="@drawable/reports"/>
+
+    <item android:id="@+id/avaliacoes"
+        android:title="AVALIAÇÕES"
+        android:icon="@drawable/comment"/>
+
+    <item android:id="@+id/ranking"
+        android:title="RANKING"
+        android:icon="@drawable/ranking"/>
+
+    <item android:id="@+id/logout"
+        android:title="LOG OUT"
+        android:icon="@drawable/exit" />
+</menu>

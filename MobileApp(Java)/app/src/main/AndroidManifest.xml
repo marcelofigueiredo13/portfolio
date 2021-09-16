@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.pintv20">
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the "MyLocation" functionality.
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:background="#EFEFEF"
+        android:icon="@drawable/app_icon"
+        android:label="CrowdZero"
+        android:networkSecurityConfig="@xml/network_security_config"
+        android:roundIcon="@drawable/app_icon"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity android:name=".Register"
+            android:label="REGISTO"/>
+
+        <activity
+            android:name=".Ranking"
+            android:label="RANKING" />
+        <activity
+            android:name=".Reports_List"
+            android:label="REPORTS" />
+        <activity
+            android:name=".Profile"
+            android:label="PERFIL" />
+        <activity
+            android:name=".Evaluations"
+            android:label="AVALIAÇÕES" />
+        <activity
+            android:name=".ReportEvaluations"
+            android:label="AVALIAÇÕES" />
+        <activity
+            android:name=".ReportInfo"
+            android:label="REPORT" />
+        <activity
+            android:name=".Report"
+            android:label="REPORT" />
+        <activity
+            android:name=".MapsActivity"
+            android:label="CROWD ZERO" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

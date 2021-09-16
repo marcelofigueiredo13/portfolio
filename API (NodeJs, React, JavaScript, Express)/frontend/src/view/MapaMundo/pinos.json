@@ -1,0 +1,339 @@
+[
+    {
+        "r_idreport": 1,
+        "r_data": "2020-04-26",
+        "r_hora": "10:10:00",
+        "r_limite": false,
+        "n_idnivel": 2,
+        "u_idutilizador": 12,
+        "l_idlocal": 8,    
+        "local": {
+            "l_idlocal": 8,
+            "l_nome": "Lake View",
+            "l_longitude": 106.3786028,
+            "l_latitude": -6.5619262,
+            "m_idmapa": 1
+        },
+        "nivel": {
+            "n_idnivel": 2,
+            "n_designacao": "Muito Populado",
+            "c_idcor": 2
+        }
+    },
+    {
+        "r_idreport": 4,
+        "r_data": "2020-09-01",
+        "r_hora": "00:22:00",
+        "r_limite": false,
+        "n_idnivel": 2,
+        "u_idutilizador": 20,
+        "l_idlocal": 5,
+        "local": {
+            "l_idlocal": 5,
+            "l_nome": "Holmberg",
+            "l_longitude": 115.251124,
+            "l_latitude": 37.520481,
+            "m_idmapa": 1
+        },
+        "nivel": {
+            "n_idnivel": 2,
+            "n_designacao": "Muito Populado",
+            "c_idcor": 2
+        }
+    },
+    {
+        "r_idreport": 5,
+        "r_data": "2021-03-14",
+        "r_hora": "07:33:00",
+        "r_limite": false,
+        "n_idnivel": 3,
+        "u_idutilizador": 1,
+        "l_idlocal": 2,
+        "local": {
+            "l_idlocal": 2,
+            "l_nome": "Summerview",
+            "l_longitude": 43.8744857,
+            "l_latitude": 15.5417343,
+            "m_idmapa": 1
+        },
+        "nivel": {
+            "n_idnivel": 3,
+            "n_designacao": "Extremamente Populado",
+            "c_idcor": 3
+        }
+    },
+    {
+        "r_idreport": 6,
+        "r_data": "2021-05-27",
+        "r_hora": "20:36:32.998517",
+        "r_limite": false,
+        "n_idnivel": 3,
+        "u_idutilizador": 1,
+        "l_idlocal": 11,
+        "local": {
+            "l_idlocal": 11,
+            "l_nome": "1600 Amphitheatre Pkwy, Mountain View, CA 94043, USA",
+            "l_longitude": -122.0839994,
+            "l_latitude": 37.4219834,
+            "m_idmapa": 1
+        },
+        "nivel": {
+            "n_idnivel": 3,
+            "n_designacao": "Extremamente Populado",
+            "c_idcor": 3
+        }
+    },
+    {
+        "r_idreport": 7,
+        "r_data": "2021-05-27",
+        "r_hora": "20:36:58.450188",
+        "r_limite": false,
+        "n_idnivel": 1,
+        "u_idutilizador": 1,
+        "l_idlocal": 11,
+        "local": {
+            "l_idlocal": 11,
+            "l_nome": "1600 Amphitheatre Pkwy, Mountain View, CA 94043, USA",
+            "l_longitude": -122.0839994,
+            "l_latitude": 37.4219834,
+            "m_idmapa": 1
+        },
+        "nivel": {
+            "n_idnivel": 1,
+            "n_designacao": "Pouco Populado",
+            "c_idcor": 1
+        }
+    },
+    {
+        "r_idreport": 8,
+        "r_data": "2021-05-28",
+        "r_hora": "11:50:50.52007",
+        "r_limite": false,
+        "n_idnivel": 2,
+        "u_idutilizador": 1,
+        "l_idlocal": 12,
+        "local": {
+            "l_idlocal": 12,
+            "l_nome": "N337-1 177, 3510-093 Viseu, Portugal",
+            "l_longitude": -7.9407262,
+            "l_latitude": 40.6542855,
+            "m_idmapa": 1
+        },
+        "nivel": {
+            "n_idnivel": 2,
+            "n_designacao": "Muito Populado",
+            "c_idcor": 2
+        }
+    },
+    {
+        "r_idreport": 9,
+        "r_data": "2021-05-28",
+        "r_hora": "12:51:34.26552",
+        "r_limite": false,
+        "n_idnivel": 3,
+        "u_idutilizador": 1,
+        "l_idlocal": 12,
+        "local": {
+            "l_idlocal": 12,
+            "l_nome": "N337-1 177, 3510-093 Viseu, Portugal",
+            "l_longitude": -7.9407262,
+            "l_latitude": 40.6542855,
+            "m_idmapa": 1
+        },
+        "nivel": {
+            "n_idnivel": 3,
+            "n_designacao": "Extremamente Populado",
+            "c_idcor": 3
+        }
+    },
+    {
+        "r_idreport": 10,
+        "r_data": "2021-05-28",
+        "r_hora": "11:52:28.707469",
+        "r_limite": false,
+        "n_idnivel": 1,
+        "u_idutilizador": 1,
+        "l_idlocal": 13,
+        "local": {
+            "l_idlocal": 13,
+            "l_nome": "Rua Santíssimo 10, 3510-694 Viseu, Portugal",
+            "l_longitude": -7.9516245,
+            "l_latitude": 40.6531782,
+            "m_idmapa": 1
+        },
+        "nivel": {
+            "n_idnivel": 1,
+            "n_designacao": "Pouco Populado",
+            "c_idcor": 1
+        }
+    },
+    {
+        "r_idreport": 11,
+        "r_data": "2021-05-28",
+        "r_hora": "12:54:09.450061",
+        "r_limite": false,
+        "n_idnivel": 1,
+        "u_idutilizador": 1,
+        "l_idlocal": 13,
+        "local": {
+            "l_idlocal": 13,
+            "l_nome": "Rua Santíssimo 10, 3510-694 Viseu, Portugal",
+            "l_longitude": -7.9516245,
+            "l_latitude": 40.6531782,
+            "m_idmapa": 1
+        },
+        "nivel": {
+            "n_idnivel": 1,
+            "n_designacao": "Pouco Populado",
+            "c_idcor": 1
+        }
+    },
+    {
+        "r_idreport": 12,
+        "r_data": "2021-05-28",
+        "r_hora": "13:25:47.763179",
+        "r_limite": false,
+        "n_idnivel": 2,
+        "u_idutilizador": 1,
+        "l_idlocal": 13,
+        "local": {
+            "l_idlocal": 13,
+            "l_nome": "Rua Santíssimo 10, 3510-694 Viseu, Portugal",
+            "l_longitude": -7.9516245,
+            "l_latitude": 40.6531782,
+            "m_idmapa": 1
+        },
+        "nivel": {
+            "n_idnivel": 2,
+            "n_designacao": "Muito Populado",
+            "c_idcor": 2
+        }
+    },
+    {
+        "r_idreport": 13,
+        "r_data": "2021-05-31",
+        "r_hora": "10:40:18.808112",
+        "r_limite": false,
+        "n_idnivel": 1,
+        "u_idutilizador": 1,
+        "l_idlocal": 14,
+        "local": {
+            "l_idlocal": 14,
+            "l_nome": "Bairro Lagar Queimado 1, 3510-694 Viseu, Portugal",
+            "l_longitude": -7.9500892,
+            "l_latitude": 40.6508331,
+            "m_idmapa": 1
+        },
+        "nivel": {
+            "n_idnivel": 1,
+            "n_designacao": "Pouco Populado",
+            "c_idcor": 1
+        }
+    },
+    {
+        "r_idreport": 14,
+        "r_data": "2021-06-23",
+        "r_hora": "15:56:08.242421",
+        "r_limite": false,
+        "n_idnivel": 3,
+        "u_idutilizador": 1,
+        "l_idlocal": 14,
+        "local": {
+            "l_idlocal": 14,
+            "l_nome": "Bairro Lagar Queimado 1, 3510-694 Viseu, Portugal",
+            "l_longitude": -7.9500892,
+            "l_latitude": 40.6508331,
+            "m_idmapa": 1
+        },
+        "nivel": {
+            "n_idnivel": 3,
+            "n_designacao": "Extremamente Populado",
+            "c_idcor": 3
+        }
+    },
+    {
+        "r_idreport": 15,
+        "r_data": "2021-07-08",
+        "r_hora": "14:41:22.681503",
+        "r_limite": false,
+        "n_idnivel": 2,
+        "u_idutilizador": 1,
+        "l_idlocal": 14,
+        "local": {
+            "l_idlocal": 14,
+            "l_nome": "Bairro Lagar Queimado 1, 3510-694 Viseu, Portugal",
+            "l_longitude": -7.9500892,
+            "l_latitude": 40.6508331,
+            "m_idmapa": 1
+        },
+        "nivel": {
+            "n_idnivel": 2,
+            "n_designacao": "Muito Populado",
+            "c_idcor": 2
+        }
+    },
+    {
+        "r_idreport": 3,
+        "r_data": "2020-08-21",
+        "r_hora": "03:56:00",
+        "r_limite": false,
+        "n_idnivel": 1,
+        "u_idutilizador": 7,
+        "l_idlocal": 1,
+        "local": {
+            "l_idlocal": 1,
+            "l_nome": "6th",
+            "l_longitude": 121.0036417,
+            "l_latitude": 14.5806413,
+            "m_idmapa": 1
+        },
+        "nivel": {
+            "n_idnivel": 1,
+            "n_designacao": "Pouco Populado",
+            "c_idcor": 1
+        }
+    },
+    {
+        "r_idreport": 2,
+        "r_data": "2020-06-08",
+        "r_hora": "02:33:00",
+        "r_limite": false,
+        "n_idnivel": 2,
+        "u_idutilizador": 10,
+        "l_idlocal": 1,
+        "local": {
+            "l_idlocal": 1,
+            "l_nome": "6th",
+            "l_longitude": 121.0036417,
+            "l_latitude": 14.5806413,
+            "m_idmapa": 1
+        },
+        "nivel": {
+            "n_idnivel": 2,
+            "n_designacao": "Muito Populado",
+            "c_idcor": 2
+        }
+    },
+    {
+        "r_idreport": 16,
+        "r_data": "2021-07-12",
+        "r_hora": "12:26:28.937776",
+        "r_limite": false,
+        "n_idnivel": 2,
+        "u_idutilizador": null,
+        "l_idlocal": 14,
+        "utilizador": null,
+        "local": {
+            "l_idlocal": 14,
+            "l_nome": "Bairro Lagar Queimado 1, 3510-694 Viseu, Portugal",
+            "l_longitude": -7.9500892,
+            "l_latitude": 40.6508331,
+            "m_idmapa": 1
+        },
+        "nivel": {
+            "n_idnivel": 2,
+            "n_designacao": "Muito Populado",
+            "c_idcor": 2
+        }
+    }
+]

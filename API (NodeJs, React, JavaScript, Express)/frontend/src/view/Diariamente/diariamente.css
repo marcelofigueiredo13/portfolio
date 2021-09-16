@@ -1,0 +1,11 @@
+#donut{
+    display: block; 
+    width: 259px; 
+    height: 253px;
+}
+
+#canvas{
+    height: 400px;
+    width: 400px;
+    
+}

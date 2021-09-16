@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EFEFEF"
+    tools:context=".Report">
+
+    <TextView
+        android:id="@+id/evaluations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="255dp"
+        android:layout_marginEnd="295dp"
+        android:layout_marginBottom="460dp"
+        android:text="Avaliações"
+        android:textAllCaps="true"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/like_white_shape"
+        android:layout_width="321dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="271dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="380dp"
+        android:background="@drawable/report_info_white"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/datahora"
+        android:layout_width="321dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="156dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="495dp"
+        android:background="@drawable/report_info_white"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/datetime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="140dp"
+        android:layout_marginEnd="290dp"
+        android:layout_marginBottom="575dp"
+        android:text="Data e Hora"
+        android:textAllCaps="true"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/densidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="209dp"
+        android:layout_marginBottom="691dp"
+        android:text="Densidade Populacional"
+        android:textAllCaps="true"
+        android:textColor="#000000"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nivel"
+        android:layout_width="321dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="45dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="45dp"
+        android:layout_marginBottom="611dp"
+        android:background="@drawable/report_info_white"
+        android:textAllCaps="true"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/commentButton"
+        android:layout_width="371dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/button_login"
+        android:shadowColor="#00FFFFFF"
+        android:text="Avaliar"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="55dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="75dp"
+        android:layout_marginTop="183dp"
+        android:layout_marginEnd="281dp"
+        android:layout_marginBottom="518dp"
+
+        android:textAllCaps="true"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/date"
+        android:layout_width="149dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="187dp"
+        android:layout_marginTop="181dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginBottom="520dp"
+        android:textAllCaps="true"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/likes"
+        android:layout_width="70dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="298dp"
+        android:layout_marginEnd="276dp"
+        android:layout_marginBottom="401dp"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/dislikes"
+        android:layout_width="70dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="234dp"
+        android:layout_marginTop="298dp"
+        android:layout_marginEnd="107dp"
+        android:layout_marginBottom="401dp"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/likeGreen"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="135dp"
+        android:layout_marginTop="298dp"
+        android:layout_marginEnd="244dp"
+        android:layout_marginBottom="401dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/like_green" />
+
+    <ImageView
+        android:id="@+id/likeRed"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="304dp"
+        android:layout_marginTop="298dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginBottom="401dp"
+        android:rotation="180"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/like_red" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

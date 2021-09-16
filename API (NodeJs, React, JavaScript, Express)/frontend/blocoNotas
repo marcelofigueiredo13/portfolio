@@ -1,0 +1,48 @@
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+
+import Navbar from './view/nav-bar/Navbar';
+
+import Form from './view/form';
+import List from './view/list';
+import Edit from './view/edit';
+import FormTipoAlerta from './view/fomTipoAlerta';
+import FormMundo from './view/formMundo';
+import ListMapa from './view/listMapa';
+import EditMapa from './view/editMapa';
+
+function App() {
+return (
+<Router>
+    <div className="App">
+    <Navbar></Navbar>
+     <ul class="navbar-nav mr-auto">
+    <li class="nav-item active">
+    <Link class="nav-link" to="/"> Employee List </Link>
+    <Link class="nav-link" to="/listMapa"> Mapa List </Link>
+    <Link class="btn btn-success " to="/form">Add Employee</Link>
+    <Link class="btn btn-success " to="/formTipoAlerta">Add TipoAlerta</Link>
+    <Link class="btn btn-success " to="/formMundo">Add Mundo</Link>
+    </li>
+    </ul>
+      <div class="container py-4">
+      <div class="row">
+
+<Route path="/listaUtilizador" exact component={List} />
+<Route path="/formUtilizador" component={Form} />
+<Route path="/edit/:u_idutilizador" component={Edit} />
+
+<Route path="/formTipoAlerta" component={FormTipoAlerta} />
+
+<Route path="/formMundo" component={FormMundo} />
+<Route path="/listMapa" component={ListMapa} />
+<Route path="/editMapa/:m_idmapa" component={EditMapa} />
+</div>
+</div>
+</div>
+</Router>
+);
+}
+export default App;
