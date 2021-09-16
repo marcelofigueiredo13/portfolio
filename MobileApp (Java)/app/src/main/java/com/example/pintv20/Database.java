@@ -23,14 +23,8 @@ public class Database extends Object implements Serializable {
     /**
      * IP do computador em que esta hospedada a API
      */
-    private static String API_IP = "https://crowdzeroapieuropeappandsite.herokuapp.com/android";
-    private static String APIGoogleGeoCoding = "AIzaSyBRkqEW-Cqkx0aRzjLyeoTO4gLVh2x8J3c";
-
-    //private static String API_IP_NOANDROID = "https://crowdzeroapieuropeappandsite.herokuapp.com";
-    //https://crowzeroapieurope.herokuapp.com
-    //https://morning-spire-98820.herokuapp.com
-    //http://192.168.1.70:3000
-    //https://maps.googleapis.com/maps/api/geocode/json?&latlng=40.650673,-7.95015&key=AIzaSyBRkqEW-Cqkx0aRzjLyeoTO4gLVh2x8J3c
+    private static String API_IP = "xxx";
+    private static String APIGoogleGeoCoding = "xxx";
 
     /**
      * Utilizador que fez login na aplicacao
