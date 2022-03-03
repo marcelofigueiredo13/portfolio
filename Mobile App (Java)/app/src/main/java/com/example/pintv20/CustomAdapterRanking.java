@@ -56,15 +56,6 @@ public class CustomAdapterRanking extends ArrayAdapter<ListItemRanking> {
             else
                 ivAvatar.setImageResource(R.drawable.avatar_1);
         }
-//        if(getItem(position).getAvatar().equals(1)){
-//            ivAvatar.setImageResource(R.drawable.avatar_1);
-//        }
-//        if(getItem(position).getAvatar().equals(2)){
-//            ivAvatar.setImageResource(R.drawable.avatar_2);
-//        }
-//        if(getItem(position).getAvatar().equals(3)){
-//            ivAvatar.setImageResource(R.drawable.avatar_3);
-//        }
 
         tvNome.setText(getItem(position).getNome());
         tvPts.setText(String.valueOf(getItem(position).getPontos()) + " Pts");
