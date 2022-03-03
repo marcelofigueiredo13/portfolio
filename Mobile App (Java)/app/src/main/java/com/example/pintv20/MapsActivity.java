@@ -88,26 +88,15 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     switch (item.getItemId()) {
                         case R.id.profile:
-                            //Toast.makeText(MapsActivity.this, "Profile!", Toast.LENGTH_SHORT).show();
-                            //drawerLayout.closeDrawer(GravityCompat.START);
                             startActivity(new Intent(MapsActivity.this, Profile.class));
                             break;
                         case R.id.reports:
-                            //Toast.makeText(MapsActivity.this, "Reports!", Toast.LENGTH_SHORT).show();
-                            //drawerLayout.closeDrawer(GravityCompat.START);
                             startActivity(new Intent(MapsActivity.this, Reports_List.class));
                             break;
                         case R.id.avaliacoes:
-                            //if(db.getEvaluations() == 0)
-                                //Toast.makeText(MapsActivity.this, "Não existem avaliações", Toast.LENGTH_SHORT).show();
-                            //else
                                 startActivity(new Intent(MapsActivity.this, Evaluations.class));
-                            //Toast.makeText(MapsActivity.this, "Avaliacoes!", Toast.LENGTH_SHORT).show();
-                            //drawerLayout.closeDrawer(GravityCompat.START);
                             break;
                         case R.id.ranking:
-                            //Toast.makeText(MapsActivity.this, "Ranking!", Toast.LENGTH_SHORT).show();
-                            //drawerLayout.closeDrawer(GravityCompat.START);
                             startActivity(new Intent(MapsActivity.this, Ranking.class));
                             break;
                         case R.id.logout:
@@ -140,15 +129,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
         // Sync the toggle state after onRestoreInstanceState has occurred.
         Toggle.syncState();
     }
-
-    /**
-     * Faz com que o mapa seja atualizado, depois de ser feito um report quando se usa o finish()
-     *//*
-    @Override
-    protected void onResume() {
-        super.onResume();
-        mapFragment.getMapAsync(MapsActivity.this);
-    }*/
 
     /**
      * Simula o logout, comeca a primeira atividade do zero
@@ -226,26 +206,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                 }
             }
         });
-/*
-        LinkedHashMap<Integer, HashMap<LatLng, Integer>> pins = db.getPins2();
-
-        for(Integer i: pins.keySet()){
-            HashMap<LatLng, Integer> data = null;
-            Integer idReport = i;
-            //System.out.println("Report numero: " + idReport);
-            data = pins.get(i);
-
-            for(LatLng k: data.keySet()){
-                System.out.println("Coordenadas: " + k.latitude + "," + k.longitude + "\nNivel: " + data.get(k));
-                LatLng marker = new LatLng(k.latitude, k.longitude);
-                mMap.addMarker(new MarkerOptions()
-                        .position(marker)
-                        .icon(bitmapDescriptor(MapsActivity.this, data.get(k)))
-                        .title(String.valueOf(idReport)));
-                mMap.setOnMarkerClickListener(this);
-            }
-        }*/
-    }
 
     /**
      * Obtem a localizacao atual do utilizador
@@ -260,7 +220,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             currentLocation = new LatLng(latitude,longitude);
         }else{
             Toast.makeText(this, "LOCALIZACAO DESATIVADA!", Toast.LENGTH_SHORT).show();
-            //gpsTracker.showSettingsAlert();
         }
     }
 
@@ -343,17 +302,4 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             return true;
         return super.onOptionsItemSelected(item);
     }
-
-    /**
-     * Ir para a informacao do report, nivel de densidade, data e hora
-
-    @Override
-    public boolean onMarkerClick(@NonNull Marker marker) {
-        //(int) marker.getPosition().latitude + "," + (int) marker.getPosition().longitude
-        //Toast.makeText(MapsActivity.this, marker.getTitle(), Toast.LENGTH_SHORT).show();
-        Intent intent = new Intent(MapsActivity.this, ReportInfo.class);
-        intent.putExtra("reportID", marker.getTitle());
-        startActivity(intent);
-        return false;
-    }*/
 }
