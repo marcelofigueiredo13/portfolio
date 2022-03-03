@@ -87,10 +87,7 @@ public class Register extends AppCompatActivity {
             }
         });
     }
-
-    /**
-     * Tem a haver com o botao de voltar atras na toolbar
-     */
+    
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
