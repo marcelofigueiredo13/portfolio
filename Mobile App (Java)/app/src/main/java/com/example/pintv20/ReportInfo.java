@@ -153,10 +153,7 @@ public class ReportInfo extends AppCompatActivity {
             }
         }, reportID);
     }
-
-    /**
-     * Tem a haver com o botao de voltar atras na toolbar
-     */
+    
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
@@ -207,20 +204,6 @@ public class ReportInfo extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     public void onWindowFocusChanged(boolean hasFocus) {
         super.onWindowFocusChanged(hasFocus);
-        /*if(hasFocus)
-        {
-            //Toast.makeText(ReportInfo.this, "Closed", Toast.LENGTH_SHORT).show();
-            ArrayList<Integer> likes = db.getNumberOfLikes(reportID);
-            tv = (TextView) findViewById(R.id.likes);
-            tv.setText(likes.get(0).toString());
-
-            tv = (TextView) findViewById(R.id.dislikes);
-            tv.setText(likes.get(1).toString());
-
-            ArrayList<String> comments = db.getComments(reportID);
-            System.out.println("ReportInfo: Number of comments received from database: " + comments.size());
-            //Toast.makeText(this, String.valueOf(comments.size()), Toast.LENGTH_SHORT).show();
-        }*/
         getReportLikes();
     }
 
