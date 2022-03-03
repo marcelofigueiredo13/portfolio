@@ -71,8 +71,8 @@ public class Report extends AppCompatActivity {
          * Mostra a data numa textView
          */
         tv = (TextView) findViewById(R.id.date);
-        Date today = Calendar.getInstance().getTime();//getting date
-        SimpleDateFormat formatter = new SimpleDateFormat("dd - MM - yyyy");//formating according to my need
+        Date today = Calendar.getInstance().getTime();
+        SimpleDateFormat formatter = new SimpleDateFormat("dd - MM - yyyy");
         final String date = formatter.format(today);
         tv.setText(date);
 
@@ -84,8 +84,6 @@ public class Report extends AppCompatActivity {
         Calendar c = Calendar.getInstance();
         int min = c.get(Calendar.MINUTE);
         int hour=c.get(Calendar.HOUR);
-        //tv.setText(String.valueOf(hour) + ":" +String.valueOf(min));
-        //LocalDateTime.now().getHour();
         tv.setText(time.toString());
 
         /**
@@ -96,26 +94,15 @@ public class Report extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                /*if(db.Report(time.toString(), date, reportLevel, latitude,longitude) == true)
-                    Toast.makeText(Report.this, "REPORT EFETUADO", Toast.LENGTH_SHORT).show();
-                else
-                    Toast.makeText(Report.this, "REPORT FALHADO", Toast.LENGTH_SHORT).show();*/
                 db.reportLocation(Report.this, reportLevel, latitude, longitude);
                 Toast.makeText(Report.this, "REPORT EFETUADO", Toast.LENGTH_SHORT).show();
 
                 Intent intent = new Intent(Report.this, MapsActivity.class);
                 startActivity(intent);
-                /**
-                 * Se utilizar finish, o mapa nao atualiza entao se comecar a atividade de novo, o mapa da reset e vai buscar o novo pino ao hashmap*/
-                //finish();
             }
         });
     }
-
-    /**
-     * Tem a haver com o botao de voltar atras na toolbar
-     */
+    
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
