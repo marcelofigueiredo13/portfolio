@@ -42,29 +42,4 @@ public class CustomAdapter extends ArrayAdapter<ListItem> {
 
         return convertView;
     }
-
-    /*
-    CustomAdapter(@NonNull Context context, int resource, @NonNull ArrayList<CustomList> list) {
-        super(context, resource, list);
-    }
-
-    @NonNull
-    @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View listItemView = convertView;
-        if(listItemView ==  null){
-            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.activity_report_evaluations, parent, false);
-        }
-
-        CustomList currentItem = getItem(position);
-
-        ImageView iv = listItemView.findViewById(R.id.like);
-        assert currentItem != null;
-        iv.setImageResource(currentItem.getImgResId());
-
-        TextView tv = listItemView.findViewById(R.id.comment);
-        tv.setText(currentItem.getComment());
-
-        return listItemView;
-    }*/
 }
