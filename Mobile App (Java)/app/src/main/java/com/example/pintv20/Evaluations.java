@@ -26,42 +26,7 @@ public class Evaluations extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
         actionBar.setHomeAsUpIndicator(R.drawable.back);
         actionBar.setDisplayHomeAsUpEnabled(true);
-
-
-        /**
-         * Obter um array com as avaliacoes do utilizador
-         * Futuramente enviar o id do utilizador e receber apenas as avaliacoes dele
-         */
-        /*db.getCurrentUser();
-        ArrayList<String> comments = db.getComments(0);
-        ArrayList<Boolean> likes = db.getLikes(0);
-        ArrayList<ListItem> items = new ArrayList<>();
-
-        ArrayList<Integer> reportIDs = db.getNumberOfReports();
-
-        for(int i = 0; i < reportIDs.size(); ++i){
-            comments.addAll(db.getComments(reportIDs.get(i)));
-            likes.addAll(db.getLikes(reportIDs.get(i)));
-        }
-
-        for(int i = 0; i < comments.size(); ++i){
-            if(likes.get(i)){
-                items.add(new ListItem(R.drawable.like_green, comments.get(i)));
-            }
-            else
-                items.add(new ListItem(R.drawable.like_red_invertido, comments.get(i)));
-        }
-
-        listView = findViewById(R.id.list);
-
-
-        items.add(new ListItem(R.drawable.like_green, "Fake Evaluation 1"));
-        items.add(new ListItem(R.drawable.like_red_invertido, "Fake Evaluation 2"));
-        items.add(new ListItem(R.drawable.like_green, "Fake Evaluation 3"));
-        items.add(new ListItem(R.drawable.like_red_invertido, "Fake Evaluation 4"));
-
-        CustomAdapter customAdapter = new CustomAdapter(this,R.layout.evaluation_list_item,items);
-        listView.setAdapter(customAdapter);*/
+        
         db.getUserEvaluations(Evaluations.this, new Database.VolleyResponseListener() {
             @Override
             public void onError(String message) {
@@ -116,10 +81,7 @@ public class Evaluations extends AppCompatActivity {
             }
         });
     }
-
-    /**
-     * Tem a haver com o botao de voltar atras na toolbar
-     */
+    
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
