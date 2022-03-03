@@ -92,41 +92,8 @@ public class ReportEvaluations extends AppCompatActivity {
                 listView.setAdapter(customAdapter);
             }
         }, reportID);
-        /*
-        ArrayList<String> comments = db.getComments(reportID);
-        ArrayList<Boolean> likes = db.getLikes(reportID);
-        ArrayList<ListItem> items = new ArrayList<>();
-
-        for(int i = 0; i < comments.size(); ++i){
-            if(likes.get(i)){
-                items.add(new ListItem(R.drawable.like_green, comments.get(i)));
-            }
-            else
-                items.add(new ListItem(R.drawable.like_red_invertido, comments.get(i)));
-        }
-
-        listView = findViewById(R.id.list);
-
-        items.add(new ListItem(R.drawable.like_green, "FAKE 1"));
-        items.add(new ListItem(R.drawable.like_red, "FAKE 2"));
-        items.add(new ListItem(R.drawable.like_green, "FAKE 3"));
-        items.add(new ListItem(R.drawable.like_red, "FAKE 4"));
-
-        CustomAdapter customAdapter = new CustomAdapter(this,R.layout.evaluation_list_item,items);
-        listView.setAdapter(customAdapter);
-
-        ArrayList<CustomList> CommentList = new ArrayList<>();
-        CommentList.add(new CustomList(R.drawable.like_green, comments.get(0)));
-        CommentList.add(new CustomList(R.drawable.like_red, comments.get(1)));
-        CommentList.add(new CustomList(R.drawable.like_green, comments.get(2)));
-
-        CustomAdapter customAdapter = new CustomAdapter(this,0,CommentList);
-        main_listview.setAdapter(customAdapter);*/
     }
-
-    /**
-     * Tem a haver com o botao de voltar atras na toolbar
-     */
+    
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         switch (item.getItemId()) {
